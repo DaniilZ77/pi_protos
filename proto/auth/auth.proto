@@ -7,6 +7,7 @@ option go_package = "github.com/DaniilZ77/pi_protos/proto/auth;authv1";
 service Auth {
     rpc Login (LoginRequest) returns (LoginResponse) {}
     rpc Signup (SignupRequest) returns (SignupResponse) {}
+    rpc UpdatePassword (UpdatePasswordRequest) returns (UpdatePasswordResponse) {}
 }
 
 message LoginRequest {
@@ -24,3 +25,9 @@ message SignupRequest {
 }
 
 message SignupResponse {}
+
+message UpdatePasswordRequest {
+    string newPassword = 1;
+}
+
+message UpdatePasswordResponse {}
